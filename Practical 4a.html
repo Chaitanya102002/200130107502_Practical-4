@@ -1,0 +1,39 @@
+<html>
+   <h2>  Bhalodia Chaitanya (200130107502) </h2>
+   <p id="demo"></p> 
+   <head>
+      <title>Practical 4A</title>
+      <script type = "text/javascript" src = "https://www.gstatic.com/charts/loader.js">
+      </script>
+      <script type = "text/javascript">
+         google.charts.load('current', {packages: ['corechart']});     
+      </script>
+   </head>
+   
+   <body>
+      <div id = "container" style = "width: 550px; height: 400px; margin: 0 auto">
+      </div>
+      <script language = "JavaScript">
+         var d = new Date(); 
+         document.getElementById("demo").innerHTML = d
+         function drawChart() {
+            // Define the chart to be drawn.
+            var data = google.visualization.arrayToDataTable([
+               ['Subjects', 'Marks'],
+               ['DV',  99],
+               ['DM',  100],
+               ['AJ',  78],
+               ['TOC',  60],
+               ['MPI',  73]
+            ]);
+
+            var options = {title: 'Population (in millions)'}; 
+
+            // Instantiate and draw the chart.
+            var chart = new google.visualization.BarChart(document.getElementById('container'));
+            chart.draw(data, options);
+         }
+         google.charts.setOnLoadCallback(drawChart);
+      </script>
+   </body>
+</html>
